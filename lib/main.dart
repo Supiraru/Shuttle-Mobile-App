@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuttle/auth.dart';
 import 'package:shuttle/home.dart';
+import 'package:shuttle/comment.dart';
 
 void main() {
   runApp(MyApp());
