@@ -25,6 +25,7 @@ class HomeScreenMobile extends StatefulWidget {
 }
 
 class _HomeScreenMobileState extends State<HomeScreenMobile> {
+  
   @override
   Widget build(BuildContext context) {
     Widget listPost({required ListPost post}) {
@@ -278,7 +279,8 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
         ),
       );
     }
-
+    List<Widget> lists = postList.map((post) => listPost(post: post)).toList();
+    lists.add(hotTopic());
     return Scaffold(
       appBar: AppBar(
         leading: Image.asset('assets/images/logo-profile.png'),
@@ -301,10 +303,9 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             postStatus(),
             Expanded(
               child: ListView(
-                children: postList.map((post) => listPost(post: post)).toList(),
+                children: lists.map((list) => list).toList(),
               ),
             ),
-            hotTopic(),
           ],
         ),
       ),
